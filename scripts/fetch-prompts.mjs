@@ -56,9 +56,18 @@ async function fetchEN() {
       );
   } catch (error) {
     console.error("[Fetch] failed to fetch en prompts", error);
-    return [];
+    return [
+      ["字数未达到要求，立即一键续写", "Please continue to supplement the content you replied to above. There is no need to start from scratch, just continue to supplement the content at the end, in Chinese"],
+      ["一键翻译", "Please translate the last content you gave me (just translate it directly, without too much explanation)"],
+      ["一键总结", "Please summarize this sentence"],
+      ["文章一键精简", "Shorten it！"],
+      ["文章一键扩写", "Expand it！"],
+      ["文章一键润色", "Refine the paragraph above to make it more logical and academic, using Chinese"],
+      ["文章快捷配图", "Please insert appropriate pictures that match the content of the article based on your answer above, and then send me the pictures you want to insert. The article content is no longer needed, please reply in Chinese. When you need to send pictures, please use markdown language to generate them, without Backslash or code box. When you need to use the unsplash API, follow the format below, https://source.unsplash.com/960x640/? Do not use code blocks for English keywords. Once you understand, reply and receive"],
+    ];
   }
 }
+
 
 async function main() {
   Promise.all([fetchCN(), fetchEN()])
