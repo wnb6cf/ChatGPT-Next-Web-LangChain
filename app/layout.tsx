@@ -11,7 +11,7 @@ const serverConfig = getServerSideConfig();
 
 export const metadata: Metadata = {
   title: "NextChat",
-  description: "Your personal ChatGPT Chat Bot.",
+  description: "仅OPENAI(GPT3.5)和谷歌(gemimi-pro)模型可用，请自行选择以上模型。",
   viewport: {
     width: "device-width",
     initialScale: 1,
