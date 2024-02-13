@@ -6,9 +6,6 @@
 一键免费部署你的跨平台私人 ChatGPT 应用, 支持 GPT3, GPT4 & Gemini Pro 模型。（基于 LangChain 实现插件功能）
 
 [![Web][Web-image]][web-url]
-[![Windows][Windows-image]][download-url]
-[![MacOS][MacOS-image]][download-url]
-[![Linux][Linux-image]][download-url]
 
 [网页版](https://chat-gpt-next-web-gosuto.vercel.app/) / [反馈](https://github.com/Hk-Gosuto/ChatGPT-Next-Web-LangChain/issues)
 
@@ -83,7 +80,9 @@
     
   - 网络请求
     - [WebBrowser](https://api.js.langchain.com/classes/langchain_tools_webbrowser.WebBrowser.html)
+      - 需要使用 `text-embedding-ada-002` 嵌入模型
     - PDFBrowser
+      - 需要使用 `text-embedding-ada-002` 嵌入模型
       - ⚠ 仅在非 vercel 环境部署时可用 ⚠
   
   - 其它
@@ -126,7 +125,9 @@
 - [x] 支持 ChatSession 级别插件功能开关
 
   仅在使用非 `0301` 和 `0314` 版本模型时会出现插件开关，其它模型默认为关闭状态，开关也不会显示。
-  
+
+  最新版本中已经移除上面两个模型。
+
 - [ ] 支持添加自定义插件
 
 ## 最新动态
@@ -200,9 +201,9 @@ OpenAI 接口代理 URL，如果你手动配置了 openai 接口代理，请填�
 
 如果你不想让用户使用 GPT-4，将此环境变量设置为 1 即可。
 
-### `HIDE_BALANCE_QUERY` （可选）
+### `ENABLE_BALANCE_QUERY` （可选）
 
-如果你不想让用户查询余额，将此环境变量设置为 1 即可。
+如果你想启用余额查询功能，将此环境变量设置为 1 即可。
 
 ### `GOOGLE_API_KEY` （可选）
 
